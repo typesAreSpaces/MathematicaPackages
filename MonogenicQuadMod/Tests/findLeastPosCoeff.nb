@@ -1,0 +1,192 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6735,        184]
+NotebookOptionsPosition[      5983,        165]
+NotebookOutlinePosition[      6409,        182]
+CellTagsIndexPosition[      6366,        179]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"findLeastPosCoeff", "[", 
+   RowBox[{"a_", ",", "p_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"roots", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "2"}], "]"}], "]"}], "&"}], ",", 
+        RowBox[{"Solve", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"x", "-", "a"}], ")"}], "+", "p"}], "\[Equal]", "0"}], 
+          ",", "x"}], "]"}]}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"negativeRoots", "=", 
+        RowBox[{"Select", "[", 
+         RowBox[{"roots", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Im", "[", "#", "]"}], "\[Equal]", "0"}], "&&", 
+            RowBox[{
+             RowBox[{"Re", "[", "#", "]"}], "<", "a"}]}], "&"}]}], "]"}]}], 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"negativeRoots", "\[Equal]", 
+         RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Case", " ", "where", " ", "there", " ", "are", " ", "no", " ", 
+          "negative", " ", "roots"}], "*)"}], "\[IndentingNewLine]", "None", 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Case", " ", "where", " ", "there", " ", "are", " ", "negative", " ",
+           "roots"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"Block", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"factor", "=", 
+            RowBox[{"Minimize", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"x", "-", "a"}], ")"}], "/", "p"}], ",", 
+                RowBox[{
+                 RowBox[{"Min", "[", "negativeRoots", "]"}], "<", "x", "<", 
+                 RowBox[{"Max", "[", "negativeRoots", "]"}]}]}], "}"}], ",", 
+              "x"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]", "factor"}], 
+         "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.886108843647645*^9, 3.886108865222871*^9}, {
+  3.886108901924097*^9, 3.8861089437263613`*^9}, {3.886108981701489*^9, 
+  3.88610905958636*^9}, {3.886109204720241*^9, 3.886109215341515*^9}, {
+  3.886109675063142*^9, 3.886109701060173*^9}, {3.88610978554513*^9, 
+  3.8861099130917377`*^9}, {3.886110155977683*^9, 3.886110202177857*^9}, {
+  3.88611023604208*^9, 3.886110394839402*^9}, {3.886110523983119*^9, 
+  3.8861105718363743`*^9}, {3.886110623429471*^9, 3.886110637620425*^9}, {
+  3.8861114030178623`*^9, 3.88611141076688*^9}, {3.8861114450768948`*^9, 
+  3.886111491908329*^9}, {3.886111678302342*^9, 3.886111692716055*^9}, {
+  3.8861117506471643`*^9, 3.88611181326021*^9}, {3.886133564947665*^9, 
+  3.886133615241598*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"e0466c19-8fd9-452d-8e1e-a906abdeafb6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"findLeastPosCoeff", "[", 
+   RowBox[{"0", ",", 
+    RowBox[{
+     RowBox[{"1", "/", "100"}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "-", 
+        RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "1"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "2"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "15"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "20"}], ")"}]}]}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"findLeastPosCoeff", "[", 
+   RowBox[{"0", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "-", 
+        RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "1"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "2"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "15"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "20"}], ")"}]}]}], "]"}], "//", "N"}]}], "Input",
+ CellChangeTimes->{{3.8861090614395847`*^9, 3.886109082850016*^9}, {
+  3.886110406511551*^9, 3.88611041325963*^9}, {3.8861106680830107`*^9, 
+  3.886110668391726*^9}, {3.886111502059649*^9, 3.886111527772203*^9}, {
+  3.886111815858259*^9, 3.88611181718333*^9}, {3.8861121831077557`*^9, 
+  3.886112184987296*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"189330b7-cac5-4b80-b653-3584f7e964ac"],
+
+Cell[BoxData[
+ RowBox[{"Rationalize", "[", 
+  RowBox[{
+   RowBox[{"41.59949431191785", "+", 
+    RowBox[{"1", "/", "1000"}]}], ",", 
+   RowBox[{"1", "/", "1000"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.886112261425441*^9, 3.886112268536941*^9}, {
+  3.886112431602702*^9, 3.88611244046412*^9}},
+ CellLabel->
+  "In[676]:=",ExpressionUUID->"0afe23d6-41d3-4f9b-b74c-2844f375019c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["83", "2"], "/", "100"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.886112332407403*^9, 3.886112335231439*^9}},
+ CellLabel->
+  "In[555]:=",ExpressionUUID->"66f977cd-a695-4811-9983-e4967970d5cd"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["208", "5"], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.886112446302836*^9, 3.886112446816986*^9}},
+ CellLabel->
+  "In[677]:=",ExpressionUUID->"8d76d784-c5a3-41cc-ac9a-a317b5a01ce8"]
+},
+WindowSize->{1440, 847},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"22a2bb6f-8f56-4bb0-adc9-51d04e6fee8d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3171, 75, 357, "Input",ExpressionUUID->"e0466c19-8fd9-452d-8e1e-a906abdeafb6"],
+Cell[3732, 97, 1390, 40, 78, "Input",ExpressionUUID->"189330b7-cac5-4b80-b653-3584f7e964ac"],
+Cell[5125, 139, 379, 9, 46, "Input",ExpressionUUID->"0afe23d6-41d3-4f9b-b74c-2844f375019c"],
+Cell[5507, 150, 247, 6, 68, "Input",ExpressionUUID->"66f977cd-a695-4811-9983-e4967970d5cd"],
+Cell[5757, 158, 222, 5, 69, "Input",ExpressionUUID->"8d76d784-c5a3-41cc-ac9a-a317b5a01ce8"]
+}
+]
+*)
+

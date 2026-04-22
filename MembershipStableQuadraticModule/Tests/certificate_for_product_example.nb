@@ -1,0 +1,539 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18638,        531]
+NotebookOptionsPosition[     16827,        498]
+NotebookOutlinePosition[     17193,        514]
+CellTagsIndexPosition[     17150,        511]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<MembershipStableQuadraticModule`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<PolyDegree`\>\"", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TestMQM", "[", 
+   RowBox[{
+   "param_", ",", "poly_", ",", "G_List", ",", "boundFunction_", ",", "tol_", 
+    ",", "maxite_", ",", "method_", ",", "enablePrint_"}], "]"}], ":=", "\n", 
+  
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"result", "=", 
+      RowBox[{
+       RowBox[{"MembershipStableQM", "[", 
+        RowBox[{
+        "param", ",", "poly", ",", "G", ",", "boundFunction", ",", "tol", ",",
+          "maxite", ",", "method"}], "]"}], "//", "Quiet"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"result", "===", "\"\<No Gram matrix found\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "poly", ",", "\"\< does not belong to the QM of \>\"", ",", "G"}], 
+        "]"}], ";", "\[IndentingNewLine]", "result"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{"enablePrint", ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+          "Print", "[", 
+           "\"\<--------------------------------------------------------------\
+----\>\"", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"poly", ",", "\"\< belongs to the QM of \>\"", ",", "G"}], 
+           "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<The Gram matrix is \>\"", ",", " ", 
+            RowBox[{
+             RowBox[{"result", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "//", "MatrixForm"}]}], "]"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<The representation found is \>\"", ",", " ", 
+            RowBox[{"result", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Expand of representation found is \>\"", ",", " ", 
+            RowBox[{"Expand", "[", 
+             RowBox[{"result", "[", 
+              RowBox[{"[", "3", "]"}], "]"}], "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Original polynomial is \>\"", ",", "poly"}], "]"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Expand of original polynomial is \>\"", ",", 
+            RowBox[{"poly", "//", "Expand"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Generators are \>\"", ",", " ", "G"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Print", "[", 
+            RowBox[{"\"\<SOS multipliers are: \>\"", ",", " ", 
+             RowBox[{"result", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "//", "Simplify"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{
+          "Print", "[", 
+           "\"\<--------------------------------------------------------------\
+----\>\"", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"result", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+   "\n", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AuxTestMQM", "[", 
+   RowBox[{
+   "param_", ",", "poly_", ",", "G_List", ",", "boundFunction_", ",", 
+    "boundFunctionF_", ",", "tol_", ",", "maxite_", ",", "method_", ",", 
+    "enablePrint_"}], "]"}], ":=", "\n", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"result", "=", 
+      RowBox[{
+       RowBox[{"AuxMembershipStableQM", "[", 
+        RowBox[{
+        "param", ",", "poly", ",", "G", ",", "boundFunction", ",", 
+         "boundFunctionF", ",", "tol", ",", "maxite", ",", "method"}], "]"}], 
+       "//", "Quiet"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"result", "===", "\"\<No Gram matrix found\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{
+        "poly", ",", "\"\< does not belong to the QM of \>\"", ",", "G"}], 
+        "]"}], ";", "\[IndentingNewLine]", "result"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{"enablePrint", ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+          "Print", "[", 
+           "\"\<--------------------------------------------------------------\
+----\>\"", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"poly", ",", "\"\< belongs to the QM of \>\"", ",", "G"}], 
+           "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<The Gram matrix is \>\"", ",", " ", 
+            RowBox[{
+             RowBox[{"result", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "//", "MatrixForm"}]}], "]"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<The representation found is \>\"", ",", " ", 
+            RowBox[{"result", "[", 
+             RowBox[{"[", "3", "]"}], "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Expand of representation found is \>\"", ",", " ", 
+            RowBox[{"Expand", "[", 
+             RowBox[{"result", "[", 
+              RowBox[{"[", "3", "]"}], "]"}], "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Original polynomial is \>\"", ",", "poly"}], "]"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Expand of original polynomial is \>\"", ",", 
+            RowBox[{"poly", "//", "Expand"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", 
+           RowBox[{"\"\<Generators are \>\"", ",", " ", "G"}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Print", "[", 
+            RowBox[{"\"\<SOS multipliers are: \>\"", ",", " ", 
+             RowBox[{"result", "[", 
+              RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "//", "Simplify"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{
+          "Print", "[", 
+           "\"\<--------------------------------------------------------------\
+----\>\"", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"result", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+   "\n", "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"928cb7cc-cc88-4b24-b19d-ff568576b1bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"g1", " ", "=", " ", 
+   RowBox[{"-", 
+    RowBox[{"x", "^", "3"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"g2", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"x", "^", "5"}]}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", " ", "=", " ", 
+    RowBox[{"g1", " ", "g2"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{"G", "=", 
+   RowBox[{"{", 
+    RowBox[{"g1", ",", "g2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"m", "=", 
+  RowBox[{"AuxTestMQM", "[", 
+   RowBox[{"param", ",", "f", ",", "G", ",", 
+    RowBox[{"10", "&"}], ",", 
+    RowBox[{"6", "&"}], ",", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "9"}]}], ",", "100", ",", "\"\<DSDP\>\"", ",", "True"}], 
+   "]"}]}]}], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"80167dae-a536-45cd-a5ef-2801917d1167"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------\"\>"], "Print",
+ CellChangeTimes->{3.901900219676098*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"b1b0ce61-caa6-47b7-b9b8-911ca214c5ed"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", 
+    SuperscriptBox["x", "8"]}], 
+   "\[InvisibleSpace]", "\<\" belongs to the QM of \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["x", "3"]}], ",", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "x"}], ")"}]}], " ", 
+      SuperscriptBox["x", "5"]}]}], "}"}]}],
+  SequenceForm[(-1 + $CellContext`x) $CellContext`x^8, 
+   " belongs to the QM of ", {-$CellContext`x^3, -(-1 + $CellContext`x) \
+$CellContext`x^5}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9019002196825542`*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"ad6b3008-b0e8-4fff-aa2d-c7820d4cd872"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Gram matrix is \"\>", "\[InvisibleSpace]", 
+   TagBox["param",
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]]}],
+  SequenceForm["The Gram matrix is ", 
+   MatrixForm[$CellContext`param]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9019002196847067`*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"3589c456-9828-400b-a4a7-c4cadfc19118"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The representation found is \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["x", "3"]}], ",", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "x"}], ")"}]}], " ", 
+      SuperscriptBox["x", "5"]}]}], "}"}]}],
+  SequenceForm[
+  "The representation found is ", {-$CellContext`x^3, -(-1 + $CellContext`x) \
+$CellContext`x^5}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.901900219685719*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"7dc334bc-479d-4d6b-b30f-a59135d9cd93"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Expand of representation found is \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["x", "3"]}], ",", 
+     RowBox[{
+      SuperscriptBox["x", "5"], "-", 
+      SuperscriptBox["x", "6"]}]}], "}"}]}],
+  SequenceForm[
+  "Expand of representation found is ", {-$CellContext`x^3, $CellContext`x^5 - \
+$CellContext`x^6}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.901900219686761*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"08b97606-f55a-40f0-90e6-5e9d98ab6197"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Original polynomial is \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", 
+    SuperscriptBox["x", "8"]}]}],
+  SequenceForm[
+  "Original polynomial is ", (-1 + $CellContext`x) $CellContext`x^8],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.901900219687796*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"7ac9fa2d-b042-45a3-b519-43b0ba5669a8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Expand of original polynomial is \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     SuperscriptBox["x", "8"]}], "+", 
+    SuperscriptBox["x", "9"]}]}],
+  SequenceForm[
+  "Expand of original polynomial is ", -$CellContext`x^8 + $CellContext`x^9],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.901900219688809*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"6dc53ecc-d7de-49c5-b390-1e8464dbd9d9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Generators are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["x", "3"]}], ",", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "x"}], ")"}]}], " ", 
+      SuperscriptBox["x", "5"]}]}], "}"}]}],
+  SequenceForm[
+  "Generators are ", {-$CellContext`x^3, -(-1 + $CellContext`x) \
+$CellContext`x^5}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.901900219689869*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"957615f4-218f-4493-b9d7-5d1b1a2e06c3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"SOS multipliers are: \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", 
+    SuperscriptBox["x", "8"]}]}],
+  SequenceForm[
+  "SOS multipliers are: ", (-1 + $CellContext`x) $CellContext`x^8],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.901900219690785*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"4ea3b887-28fa-4219-8743-75e9344d727b"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------\"\>"], "Print",
+ CellChangeTimes->{3.901900219691615*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"31348a85-dfdd-4031-baae-e224afb2f93d"]
+}, Open  ]],
+
+Cell[BoxData["param"], "Output",
+ CellChangeTimes->{3.901900219692616*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"d05012ff-f906-4dc5-90ee-12166d9c4fe4"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mons", "=", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "x", ",", 
+      RowBox[{"x", "^", "2"}], ",", 
+      RowBox[{"x", "^", "3"}], ",", "1", ",", "x", ",", 
+      RowBox[{"x", "^", "2"}], ",", "1", ",", "x", ",", 
+      RowBox[{"x", "^", "2"}], ",", 
+      RowBox[{"x", "^", "3"}], ",", 
+      RowBox[{"x", "^", "4"}], ",", 
+      RowBox[{"x", "^", "5"}]}], "}"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mons", ".", "m", ".", 
+    RowBox[{"Transpose", "[", "mons", "]"}]}], "//", 
+   RowBox[{
+    RowBox[{"#", "[", 
+     RowBox[{"[", 
+      RowBox[{"1", ",", "1"}], "]"}], "]"}], "&"}]}], "//", 
+  "Simplify"}], "\[IndentingNewLine]", 
+ RowBox[{"f", "//", "Expand"}]}], "Input",ExpressionUUID->"1d1635d7-965f-4611-\
+aefb-49c070c884fc"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"g1", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "-", 
+      RowBox[{"1", "/", "2"}]}], ")"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", "1"}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", "2"}], ")"}], "^", "3"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"g2", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "2"}]}], ")"}]}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", "1"}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", "2"}], ")"}], "^", "4"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"f", " ", "=", " ", "g1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"G", "=", 
+   RowBox[{"{", "g2", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"m", "=", 
+  RowBox[{"AuxTestMQM", "[", 
+   RowBox[{"param", ",", "f", ",", "G", ",", 
+    RowBox[{"8", "&"}], ",", 
+    RowBox[{"6", "&"}], ",", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "9"}]}], ",", "100", ",", "\"\<DSDP\>\"", ",", "True"}], 
+   "]"}]}]}], "Input",ExpressionUUID->"88137ff0-2f64-42be-8672-863c799a29bd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "2"}], "+", "x"}], ")"}], "3"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}], ")"}], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], "+", "x"}], ")"}], "*", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["1", "2"], "-", "x"}], ")"}], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "2"}], "+", "x"}], ")"}], "4"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}], ")"}], "2"]}], "//", "Expand"}], "\n", 
+ RowBox[{
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "2"}], "+", "x"}], ")"}], "3"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "x"}], ")"}], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], "+", "x"}], ")"}]}], "\[InvisibleSpace]", "//",
+   "Expand"}]}], "Input",ExpressionUUID->"811ef9f3-3cdb-431e-8490-\
+5872749104a3"]
+},
+WindowSize->{1884, 2067},
+WindowMargins->{{Automatic, 23}, {23, Automatic}},
+Magnification:>1.7 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 6918, 162, 1650, "Input",ExpressionUUID->"928cb7cc-cc88-4b24-b19d-ff568576b1bb"],
+Cell[CellGroupData[{
+Cell[7501, 186, 872, 28, 206, "Input",ExpressionUUID->"80167dae-a536-45cd-a5ef-2801917d1167"],
+Cell[CellGroupData[{
+Cell[8398, 218, 248, 5, 42, "Print",ExpressionUUID->"b1b0ce61-caa6-47b7-b9b8-911ca214c5ed"],
+Cell[8649, 225, 842, 26, 47, "Print",ExpressionUUID->"ad6b3008-b0e8-4fff-aa2d-c7820d4cd872"],
+Cell[9494, 253, 427, 12, 42, "Print",ExpressionUUID->"3589c456-9828-400b-a4a7-c4cadfc19118"],
+Cell[9924, 267, 658, 20, 47, "Print",ExpressionUUID->"7dc334bc-479d-4d6b-b30f-a59135d9cd93"],
+Cell[10585, 289, 590, 17, 47, "Print",ExpressionUUID->"08b97606-f55a-40f0-90e6-5e9d98ab6197"],
+Cell[11178, 308, 491, 14, 42, "Print",ExpressionUUID->"7ac9fa2d-b042-45a3-b519-43b0ba5669a8"],
+Cell[11672, 324, 483, 13, 42, "Print",ExpressionUUID->"6dc53ecc-d7de-49c5-b390-1e8464dbd9d9"],
+Cell[12158, 339, 632, 20, 47, "Print",ExpressionUUID->"957615f4-218f-4493-b9d7-5d1b1a2e06c3"],
+Cell[12793, 361, 487, 14, 42, "Print",ExpressionUUID->"4ea3b887-28fa-4219-8743-75e9344d727b"],
+Cell[13283, 377, 248, 5, 42, "Print",ExpressionUUID->"31348a85-dfdd-4031-baae-e224afb2f93d"]
+}, Open  ]],
+Cell[13546, 385, 152, 2, 84, "Output",ExpressionUUID->"d05012ff-f906-4dc5-90ee-12166d9c4fe4"]
+}, Open  ]],
+Cell[13713, 390, 824, 23, 130, "Input",ExpressionUUID->"1d1635d7-965f-4611-aefb-49c070c884fc"],
+Cell[14540, 415, 1156, 38, 206, "Input",ExpressionUUID->"88137ff0-2f64-42be-8672-863c799a29bd"],
+Cell[15699, 455, 1124, 41, 146, "Input",ExpressionUUID->"811ef9f3-3cdb-431e-8490-5872749104a3"]
+}
+]
+*)
+

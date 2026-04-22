@@ -1,0 +1,83 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2515,         75]
+NotebookOptionsPosition[      1926,         56]
+NotebookOutlinePosition[      2438,         74]
+CellTagsIndexPosition[      2395,         71]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<Homogenize`\>\"", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<PolyDegree`\>\"", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{
+  3.545825155715281*^9, {3.8651724761406183`*^9, 3.865172492183825*^9}, {
+   3.8651729268102818`*^9, 3.8651729269909897`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"03432ebe-3226-46e1-8da7-b347873b28ea"],
+
+Cell[BoxData[{
+ RowBox[{"HomogenizeExcludingCWithH", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "2"}], " ", "+", " ", "1"}], ",", "c", ",", "y"}], 
+  "]"}], "\n", 
+ RowBox[{"HomogenizeExcludingCWithH", "[", 
+  RowBox[{
+   RowBox[{"x", "+", " ", "1"}], ",", "c", ",", "y"}], "]"}], "\n", 
+ RowBox[{"HomogenizeExcludingCWithH", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "y"}], ",", "c", ",", "y"}], "]"}], "\n", 
+ RowBox[{"HomogenizeExcludingCWithH", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "x"}], "-", "y"}], ",", "c", ",", "y"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.545825155715281*^9, {3.865172499574868*^9, 3.8651725083369207`*^9}, {
+   3.8651728495252457`*^9, 3.865172851022749*^9}, {3.865173076801564*^9, 
+   3.865173084326219*^9}, {3.865173134067212*^9, 3.8651731573777933`*^9}, {
+   3.865176466135771*^9, 3.865176489269043*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"e6ba71bb-e3a8-4220-99b7-1327c48d7124"]
+}, Open  ]]
+},
+WindowSize->{3794, 2067},
+WindowMargins->{{23, Automatic}, {23, Automatic}},
+Magnification:>1.9 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "home", "jose", 
+   ".Mathematica", "SystemFiles", "FrontEnd", "StyleSheets"}, "Dimad.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 399, 8, 147, "Input",ExpressionUUID->"03432ebe-3226-46e1-8da7-b347873b28ea"],
+Cell[982, 32, 928, 21, 261, "Input",ExpressionUUID->"e6ba71bb-e3a8-4220-99b7-1327c48d7124"]
+}, Open  ]]
+}
+]
+*)
+

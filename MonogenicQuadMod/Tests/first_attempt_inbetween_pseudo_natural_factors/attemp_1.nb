@@ -1,0 +1,184 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5563,        174]
+NotebookOptionsPosition[      4867,        156]
+NotebookOutlinePosition[      5233,        172]
+CellTagsIndexPosition[      5190,        169]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"Get", "[", "\"\<WeifengTwoGenerators`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<DorisAlgorithmCompactCase`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<DorisThreeGenerators`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<GeneralizedNaturalGenerators`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<DebuggerMessage`\>\"", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.891608726766865*^9, 3.891608727406801*^9}},
+ CellLabel->
+  "In[164]:=",ExpressionUUID->"ab7a2047-f414-4f5f-a7c4-c5da48aa4b5b"],
+
+Cell[BoxData[
+ RowBox[{"DorisAlgorithmCompactCase", "[", 
+  RowBox[{"x", ",", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "x"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "1"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "2"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "3"}], ")"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8916087355427647`*^9, 3.891608781927528*^9}},
+ CellLabel->
+  "In[169]:=",ExpressionUUID->"0d4e3eba-1c55-42f6-a513-02cf095dcc01"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"outfix", "=", 
+   RowBox[{"x", 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "3"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"infix", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "=", 
+   RowBox[{
+    RowBox[{"-", "infix"}], " ", "outfix"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s1", "=", 
+   RowBox[{"1", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"s0", "=", 
+  RowBox[{"infix", "-", 
+   RowBox[{"s1", " ", "g"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"s0", "<", "0"}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8916087931603327`*^9, 3.891608862524644*^9}, {
+  3.8916096236078663`*^9, 3.891609694814271*^9}, {3.891609791047422*^9, 
+  3.891609882760582*^9}, {3.891609945031292*^9, 3.891609979830229*^9}, {
+  3.8916398172766027`*^9, 3.891639857360222*^9}, {3.891639931903503*^9, 
+  3.891639936655944*^9}},
+ CellLabel->
+  "In[1286]:=",ExpressionUUID->"2739872c-71c3-4d22-926f-619bb64adb76"],
+
+Cell[BoxData[{
+ RowBox[{"Plot", "[", 
+  RowBox[{"s0", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "4"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"-", "g"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "4"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"infix", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "4"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.891639901672306*^9, 3.8916399144936743`*^9}},
+ CellLabel->
+  "In[1277]:=",ExpressionUUID->"081d10b0-f02f-4648-a594-aca3585179d0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Double", " ", "checking"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "x"}], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "3"}], "+", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", "x"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "x"}], ")"}], " ", "x"}], "+", 
+    RowBox[{
+     RowBox[{"1", "/", "2"}], "g"}]}], "\n", 
+   RowBox[{"Series", "[", 
+    RowBox[{
+     RowBox[{"1", "+", 
+      RowBox[{
+       RowBox[{"1", "/", "2"}], "outfix"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1", ",", "10"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Series", "[", 
+    RowBox[{
+     RowBox[{"1", "+", 
+      RowBox[{
+       RowBox[{"1", "/", "2"}], "outfix"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "2", ",", "10"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.891640168400531*^9, 
+  3.891640173580846*^9}},ExpressionUUID->"fc5f18d7-9ba9-4fe8-ad84-\
+1951bae820e6"]
+},
+WindowSize->{1960, 1062},
+WindowMargins->{{23, Automatic}, {Automatic, 70}},
+Magnification:>1.2 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 631, 14, 151, "Input",ExpressionUUID->"ab7a2047-f414-4f5f-a7c4-c5da48aa4b5b"],
+Cell[1192, 36, 617, 19, 38, "Input",ExpressionUUID->"0d4e3eba-1c55-42f6-a513-02cf095dcc01"],
+Cell[1812, 57, 1160, 32, 197, "Input",ExpressionUUID->"2739872c-71c3-4d22-926f-619bb64adb76"],
+Cell[2975, 91, 603, 18, 113, "Input",ExpressionUUID->"081d10b0-f02f-4648-a594-aca3585179d0"],
+Cell[3581, 111, 1282, 43, 141, "Input",ExpressionUUID->"fc5f18d7-9ba9-4fe8-ad84-1951bae820e6"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

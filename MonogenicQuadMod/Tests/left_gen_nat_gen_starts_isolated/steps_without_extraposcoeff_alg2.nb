@@ -1,0 +1,1069 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33499,       1061]
+NotebookOptionsPosition[     32496,       1040]
+NotebookOutlinePosition[     32861,       1056]
+CellTagsIndexPosition[     32818,       1053]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "0"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "0"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8859951415876503`*^9, 3.885995149312056*^9}, {
+  3.885997730949045*^9, 3.8859977648265133`*^9}, {3.885997948582117*^9, 
+  3.885997977910158*^9}, {3.885998801964711*^9, 3.8859988695374813`*^9}, {
+  3.885999562257265*^9, 3.885999572616144*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"f852b2ab-50c7-4d5e-abbf-da1a70d254d0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "0"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{3.886389433038211*^9},
+ CellLabel->"In[16]:=",ExpressionUUID->"595ed1db-b13a-414f-8650-42b96ba84478"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "4"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "0"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{3.886389440537414*^9},
+ CellLabel->"In[31]:=",ExpressionUUID->"bc66f119-357c-456f-bce5-b9c4912b8b80"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "4"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.886389450032202*^9, 3.8863894547850733`*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"abbe16ab-51aa-4d35-af74-58e9a0267334"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "4"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "4"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8863894630846863`*^9, 3.886389463316193*^9}},
+ CellLabel->"In[61]:=",ExpressionUUID->"c7322acc-ac5a-4d27-84e1-74f9f11e2d42"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "4"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "6"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{3.886389476745837*^9},
+ CellLabel->"In[76]:=",ExpressionUUID->"b74263ef-230e-4311-bed3-d4bd66b66adb"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "4"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "8"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{3.886389483443162*^9},
+ CellLabel->"In[91]:=",ExpressionUUID->"ec41c323-d1e0-418f-94e2-c586ae7731c3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"1", "/", "1000"}]}], ")"}], "^", "2"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "15"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sosFactors9", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "2"}], ")"}], "/", "2"}]}], ")"}], "^", "4"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "10"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"scale9", "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"sosFactors9", "/.", 
+      RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp9", "=", 
+   RowBox[{"sosFactors9", " ", "p9", " ", "scale9"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"pp9", ",", 
+      RowBox[{"0", "\[LessEqual]", "x", "\[LessEqual]", "20"}]}], "}"}], ",", 
+    "x"}], "]"}], "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{"negIntervals", "=", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "<", "0"}], ",", "x"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #1\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Fold", "[", 
+  RowBox[{"Plus", ",", "0", ",", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], "-", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Apply", "[", 
+      RowBox[{"List", ",", "negIntervals"}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Measure #2\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "5", "]"}], "]"}], "-", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ")"}], "&"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Apply", "[", 
+    RowBox[{"List", ",", "negIntervals"}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "pp9"}], "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 1 <= x <= 2\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"pp9", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<pp9 15 <= x <= 20\>\""}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", "+", "pp9"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "15", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotLegends", "\[Rule]", "\"\<x + pp9 15 <= x <= 20\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.886389490316807*^9, 3.8863894904988327`*^9}},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"b606512d-8094-4c65-b24b-09b754b5ec9c"]
+},
+WindowSize->{1960, 2067},
+WindowMargins->{{23, Automatic}, {23, Automatic}},
+Magnification:>2. Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4173, 128, 881, "Input",ExpressionUUID->"f852b2ab-50c7-4d5e-abbf-da1a70d254d0"],
+Cell[4734, 150, 3951, 125, 881, "Input",ExpressionUUID->"595ed1db-b13a-414f-8650-42b96ba84478"],
+Cell[8688, 277, 3951, 125, 881, "Input",ExpressionUUID->"bc66f119-357c-456f-bce5-b9c4912b8b80"],
+Cell[12642, 404, 3977, 125, 881, "Input",ExpressionUUID->"abbe16ab-51aa-4d35-af74-58e9a0267334"],
+Cell[16622, 531, 3977, 125, 866, "Input",ExpressionUUID->"c7322acc-ac5a-4d27-84e1-74f9f11e2d42"],
+Cell[20602, 658, 3951, 125, 950, "Input",ExpressionUUID->"b74263ef-230e-4311-bed3-d4bd66b66adb"],
+Cell[24556, 785, 3951, 125, 950, "Input",ExpressionUUID->"ec41c323-d1e0-418f-94e2-c586ae7731c3"],
+Cell[28510, 912, 3982, 126, 950, "Input",ExpressionUUID->"b606512d-8094-4c65-b24b-09b754b5ec9c"]
+}
+]
+*)
+

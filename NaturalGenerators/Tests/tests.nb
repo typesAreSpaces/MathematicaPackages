@@ -1,0 +1,170 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5627,        162]
+NotebookOptionsPosition[      5025,        145]
+NotebookOutlinePosition[      5391,        161]
+CellTagsIndexPosition[      5348,        158]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<NonNegativityCheckUnivariate`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<NaturalGenerators`\>\"", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.851350471099863*^9, 3.851350478426362*^9}, {
+  3.851350529475325*^9, 3.851350531547626*^9}, {3.851350585312314*^9, 
+  3.851350625589469*^9}, {3.8520797782337227`*^9, 3.852079790760944*^9}, {
+  3.852086760389104*^9, 3.852086762639345*^9}, {3.8524944902978287`*^9, 
+  3.852494495226336*^9}},
+ CellLabel->
+  "In[296]:=",ExpressionUUID->"da860c97-dbbc-4cfe-b675-3d581a1f2c05"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Simple", " ", "tests"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"NaturalGenerators", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}], "]"}], ",", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "3"}], "}"}], "]"}], ",", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "5"}], "}"}], "]"}], ",", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"6", ",", "6"}], "]"}], ",", " ", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"7", ",", "7"}], "]"}]}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"InputNonNegativeIntervals", "[", 
+    RowBox[{"x", ",", "%"}], "]"}], " ", "\[IndentingNewLine]", 
+   RowBox[{"NaturalGenerators", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"1", "/", "2"}]}], "}"}], "]"}], ",", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "100"}], "}"}], "]"}], ",", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"400", ",", "500"}], "}"}], "]"}]}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"InputNonNegativeIntervals", "[", 
+    RowBox[{"x", ",", "%"}], "]"}]}]}]], "Input",
+ CellLabel->
+  "In[298]:=",ExpressionUUID->"af07c918-d08d-4e24-b90e-9a492db3f351"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"More", " ", "tests"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"NaturalGenerators", "[", 
+   RowBox[{"x", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Interval", "[", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}], "]"}], ",", 
+      RowBox[{"Interval", "[", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "2"}], "}"}], "]"}], ",", 
+      RowBox[{"Interval", "[", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "5"}], "}"}], "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8520867662013407`*^9, 3.852086791723114*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"74df7799-c749-4e41-a65d-4476e50e73bd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"More", " ", "tests", " ", "2"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"NaturalGenerators", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}], "]"}], ",", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "3"}], "}"}], "]"}], ",", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "5"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"6", ",", "7"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"8", ",", "9"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"10", ",", "11"}], "}"}], "]"}]}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"NaturalGenerators", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"i", "+", "1"}]}], "}"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "100", ",", "2"}], "}"}]}], "]"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8521385489811068`*^9, 3.852138556109046*^9}, 
+   3.85213884739146*^9, {3.852139013495098*^9, 3.8521390342424593`*^9}, {
+   3.8521433706552057`*^9, 3.852143370812355*^9}, {3.852143410987686*^9, 
+   3.852143411324201*^9}},
+ CellLabel->
+  "In[302]:=",ExpressionUUID->"e203d424-6b03-403e-a642-3285a791c448"]
+},
+WindowSize->{1960, 2067},
+WindowMargins->{{23, Automatic}, {23, Automatic}},
+Magnification:>1.6 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 610, 12, 117, "Input",ExpressionUUID->"da860c97-dbbc-4cfe-b675-3d581a1f2c05"],
+Cell[1171, 34, 1534, 43, 318, "Input",ExpressionUUID->"af07c918-d08d-4e24-b90e-9a492db3f351"],
+Cell[2708, 79, 686, 18, 120, "Input",ExpressionUUID->"74df7799-c749-4e41-a65d-4476e50e73bd"],
+Cell[3397, 99, 1624, 44, 213, "Input",ExpressionUUID->"e203d424-6b03-403e-a642-3285a791c448"]
+}
+]
+*)
+

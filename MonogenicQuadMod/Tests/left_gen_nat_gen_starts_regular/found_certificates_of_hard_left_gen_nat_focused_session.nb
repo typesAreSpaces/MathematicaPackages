@@ -1,0 +1,1021 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33565,       1013]
+NotebookOptionsPosition[     31990,        986]
+NotebookOutlinePosition[     32355,       1002]
+CellTagsIndexPosition[     32312,        999]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Example", " ", "1"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Template", " ", "to", " ", "find", " ", "sos", " ", 
+     RowBox[{"multiplier", " ", "\\", "alpha"}], " ", "such", " ", "that", 
+     " ", "x"}], " ", "-", " ", 
+    RowBox[{
+     RowBox[{"\\", "alpha"}], " ", "g_", "5", " ", "is", " ", "a", " ", 
+     "SOS"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"prefix", "=", "x"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"suffix", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x", "-", "1"}], ")"}], "^", "5"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "13"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "15"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "17"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g5", "=", 
+     RowBox[{
+      RowBox[{"-", "prefix"}], " ", "suffix"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f5", "[", 
+      RowBox[{"x_", ",", "a_"}], "]"}], ":=", 
+     RowBox[{"prefix", "-", 
+      RowBox[{"a", " ", "g5"}]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"s51", "=", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "13"}], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "15"}], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "17"}], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"sosPart5S1", "=", 
+    RowBox[{"f5", "[", 
+     RowBox[{"x", ",", "s51"}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Reduce", "[", 
+    RowBox[{
+     RowBox[{"sosPart5S1", "<", "0"}], ",", "x"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"sosPart5S1", "\[Equal]", "0"}], ",", "x"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"sosPart5S1", ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"sosPart5S1", "/.", 
+    RowBox[{"x", "\[Rule]", "0"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"sosPart5S1", "+", 
+     RowBox[{"s51", " ", "g5"}]}], "//", "Simplify"}]}]}]], "Input",
+ CellChangeTimes->{{3.885433739441567*^9, 3.8854337703665657`*^9}, {
+  3.885437774678049*^9, 3.885437788985355*^9}, {3.885437965172654*^9, 
+  3.885437980293744*^9}, {3.885438499354702*^9, 3.88543852798141*^9}, {
+  3.885490157008441*^9, 3.885490185510716*^9}, {3.885490279239044*^9, 
+  3.885490301137664*^9}, {3.885496710342986*^9, 3.885496716451056*^9}, {
+  3.886380950314549*^9, 3.8863810264612417`*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"61304181-41af-4e8e-82d2-70b90ed0fed4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS5", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"15", "+", "13"}], ")"}], "/", "2"}]}], ")"}], "^", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff5", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "13"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "15"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "17"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS5", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS5"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart5S1", "=", 
+  RowBox[{"f5", "[", 
+   RowBox[{"x", ",", "coeff5"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart5S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"sosPart5S1", "\[Equal]", "0"}], ",", "x"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart5S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8854377970293303`*^9, 3.885437811934095*^9}, {
+  3.8854378448339157`*^9, 3.88543784510467*^9}, {3.885437990372486*^9, 
+  3.885437990742828*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"8f340970-f682-4742-b7f7-069101a78763"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS5", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"15", "+", "13"}], ")"}], "/", "2"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"17", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff5", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "13"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "15"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "17"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS5", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS5"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart5S1", "=", 
+  RowBox[{"f5", "[", 
+   RowBox[{"x", ",", "coeff5"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart5S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"sosPart5S1", "\[Equal]", "0"}], ",", "x"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart5S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.885437853046361*^9, 3.8854378667242603`*^9}, {
+  3.8854380048945303`*^9, 3.885438005127287*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"981b0a8a-a667-40ed-8c25-b883dcad37a4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS5", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"17", "+", "20"}], ")"}], "/", "2"}], ")"}]}], ")"}], "^", 
+    "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff5", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "13"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "15"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "17"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS5", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS5"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart5S1", "=", 
+  RowBox[{"f5", "[", 
+   RowBox[{"x", ",", "coeff5"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart5S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"sosPart5S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart5S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.8854378328648367`*^9, {3.885437897601377*^9, 3.8854378988616533`*^9}, {
+   3.885438012784437*^9, 3.885438012990872*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"98dc4735-996c-4e94-a733-dc196522eb1a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS5", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"17", "+", "20"}], ")"}], "/", "2"}], ")"}]}], ")"}], "^", 
+     "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"13.056486460602985`", "+", "14.837458353308234`"}], ")"}],
+           "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff5", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "13"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "15"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "17"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS5", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS5"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart5S1", "=", 
+  RowBox[{"f5", "[", 
+   RowBox[{"x", ",", "coeff5"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart5S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"sosPart5S1", "\[Equal]", "0"}], ",", "x"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart5S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart5S1", "+", 
+  RowBox[{"coeff5", " ", "g5"}]}]}], "Input",
+ CellChangeTimes->{{3.885437876975185*^9, 3.885437930023899*^9}, {
+  3.885438018066635*^9, 3.885438018251298*^9}, {3.886381043909752*^9, 
+  3.886381096208151*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"773340f9-9959-4385-bef5-519433f8d1f0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Example", " ", "2"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Template", " ", "to", " ", "find", " ", "sos", " ", 
+     RowBox[{"multiplier", " ", "\\", "alpha"}], " ", "such", " ", "that", 
+     " ", "x"}], " ", "-", " ", 
+    RowBox[{
+     RowBox[{"\\", "alpha"}], " ", "g_", "5", " ", "is", " ", "a", " ", 
+     "SOS"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g2", "=", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"x", "^", "3"}]}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x", "-", "1"}], ")"}], "^", "5"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "13"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "15"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "17"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f2", "[", 
+      RowBox[{"x_", ",", "a_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"x", "^", "3"}], "-", 
+      RowBox[{"a", " ", "g2"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"guessS2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"coeff2", "=", 
+     RowBox[{
+      RowBox[{"1", "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+          RowBox[{"(", 
+           RowBox[{"x", "-", "13"}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"x", "-", "15"}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"x", "-", "17"}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+         RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+      RowBox[{"(", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"guessS2", "/.", 
+          RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS2"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"sosPart2S1", "=", 
+    RowBox[{"f2", "[", 
+     RowBox[{"x", ",", "coeff2"}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Reduce", "[", 
+    RowBox[{
+     RowBox[{"sosPart2S1", "<", "0"}], ",", "x"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"sosPart2S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", "N"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"sosPart2S1", ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.885438549062207*^9, 3.885438586776594*^9}, {
+  3.885438635565702*^9, 3.885438670473353*^9}, {3.8854393435802107`*^9, 
+  3.885439345359807*^9}, {3.885439426191833*^9, 3.885439426591597*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"fa3188b5-a4af-45d5-a8ab-0713f0d166b7"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS2", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"13", "+", "15"}], ")"}], "/", "2"}]}], ")"}], "^", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff2", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "13"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "15"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "17"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS2", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart2S1", "=", 
+  RowBox[{"f2", "[", 
+   RowBox[{"x", ",", "coeff2"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart2S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"sosPart2S1", "\[Equal]", "0"}], ",", "x"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart2S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.885438693315425*^9, 3.885438701426878*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"80339cb2-b424-4574-8f30-4c54b56cf61b"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS2", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"13", "+", "15"}], ")"}], "/", "2"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"17", "+", "20"}], ")"}], "/", "2"}]}], ")"}], "^", 
+     "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff2", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "1"}], ")"}], "^", "5"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "13"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "15"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "17"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "20"}], ")"}]}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS2", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart2S1", "=", 
+  RowBox[{"f2", "[", 
+   RowBox[{"x", ",", "coeff2"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart2S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"sosPart2S1", "\[Equal]", "0"}], ",", "x"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart2S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart2S1", "+", 
+  RowBox[{"coeff2", " ", "g2"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.885438718962083*^9, 3.885438731804893*^9}, {
+  3.8863811077450733`*^9, 3.886381135321824*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"51451f71-a020-48f3-9485-83fd3aa39738"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Example", " ", "3"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Template", " ", "to", " ", "find", " ", "sos", " ", 
+     RowBox[{"multiplier", " ", "\\", "alpha"}], " ", "such", " ", "that", 
+     " ", "x"}], " ", "-", " ", 
+    RowBox[{
+     RowBox[{"\\", "alpha"}], " ", "g_", "5", " ", "is", " ", "a", " ", 
+     "SOS"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"suffix3", "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x", "-", "1"}], ")"}], "^", "5"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "2"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "3"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "4"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "7"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "8"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "10"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "14"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "15"}], ")"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x", "-", "16"}], ")"}], "^", "2"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "19"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", "20"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"prefix3", "=", 
+     RowBox[{"x", "^", "3"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g3", "=", 
+     RowBox[{
+      RowBox[{"-", "prefix3"}], " ", "suffix3"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f3", "[", 
+      RowBox[{"x_", ",", "a_"}], "]"}], ":=", 
+     RowBox[{"prefix3", "-", 
+      RowBox[{"a", " ", "g3"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"guessS3", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"coeff3", "=", 
+    RowBox[{
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "suffix3"}], "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+     RowBox[{"(", 
+      RowBox[{"1", "/", 
+       RowBox[{"(", 
+        RowBox[{"guessS3", "/.", 
+         RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS3"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"sosPart3S1", "=", 
+    RowBox[{"f3", "[", 
+     RowBox[{"x", ",", "coeff3"}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Reduce", "[", 
+    RowBox[{
+     RowBox[{"sosPart3S1", "<", "0"}], ",", "x"}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"sosPart3S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", "N"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"sosPart3S1", ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.885439573260154*^9, 3.885439649043334*^9}, {
+   3.885439956796452*^9, 3.8854399609645348`*^9}, {3.885439995968083*^9, 
+   3.8854400191094427`*^9}, {3.88544011034412*^9, 3.88544032429487*^9}, {
+   3.885444301494425*^9, 3.885444319295939*^9}, 3.885525791559413*^9, {
+   3.8855262973302298`*^9, 3.885526309048552*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"48f88cc2-9667-4938-ba13-920f49707e25"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS3", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "-", 
+      RowBox[{"Rationalize", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"4.761467516200083`", "+", "6.735823820411221`"}], ")"}], 
+         "/", "2"}], ",", 
+        RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff3", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "suffix3"}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS3", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS3"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart3S1", "=", 
+  RowBox[{"f3", "[", 
+   RowBox[{"x", ",", "coeff3"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart3S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"sosPart3S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart3S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8854403395083027`*^9, 3.8854403713223543`*^9}},
+ CellLabel->"In[62]:=",ExpressionUUID->"d7b4de95-ad5e-4141-8d14-0f2e4639c040"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS3", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"4.761467516200083`", "+", "6.735823820411221`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"8.516682559500303`", "+", "9.933571533668355`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff3", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "suffix3"}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS3", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS3"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart3S1", "=", 
+  RowBox[{"f3", "[", 
+   RowBox[{"x", ",", "coeff3"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart3S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"sosPart3S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart3S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.885440403983006*^9, 3.885440415483918*^9}},
+ CellLabel->"In[68]:=",ExpressionUUID->"09a86b62-6b40-4ab9-89c3-b4af179f08e5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS3", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"4.761467516200083`", "+", "6.735823820411221`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"8.516682559500303`", "+", "9.933571533668355`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"14.050048944136394`", "+", "14.94860641519084`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff3", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "suffix3"}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS3", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS3"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart3S1", "=", 
+  RowBox[{"f3", "[", 
+   RowBox[{"x", ",", "coeff3"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart3S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"sosPart3S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart3S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8854404275419292`*^9, 3.885440456200468*^9}},
+ CellLabel->"In[74]:=",ExpressionUUID->"47c489af-1103-471c-a706-15aaa71bdc3f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS3", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"4.761467516200083`", "+", "6.735823820411221`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"8.516682559500303`", "+", "9.933571533668355`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"14.050048944136394`", "+", "14.94860641519084`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"19.00028098951605`", "+", "19.999975670153116`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff3", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "suffix3"}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS3", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS3"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart3S1", "=", 
+  RowBox[{"f3", "[", 
+   RowBox[{"x", ",", "coeff3"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart3S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"sosPart3S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart3S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.885440469668105*^9, 3.885440484336176*^9}, {
+  3.885531632428841*^9, 3.885531636596672*^9}},
+ CellLabel->"In[96]:=",ExpressionUUID->"03693801-2ff0-481d-a02f-268d47feae7b"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessS3", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"4.761467516200083`", "+", "6.735823820411221`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"8.516682559500303`", "+", "9.933571533668355`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"14.050048944136394`", "+", "14.94860641519084`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"19.00028098951605`", "+", "19.999975670153116`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"x", "-", 
+       RowBox[{"Rationalize", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"19.803006411955174`", "+", "19.94322057118392`"}], ")"}], 
+          "/", "2"}], ",", 
+         RowBox[{"1", "/", "10"}]}], "]"}]}], ")"}], "^", "2"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"guessS3", "//", "N"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"coeff3", "=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "suffix3"}], "/.", 
+       RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"guessS3", "/.", 
+        RowBox[{"x", "\[Rule]", "0"}]}], ")"}]}], ")"}], "guessS3"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sosPart3S1", "=", 
+  RowBox[{"f3", "[", 
+   RowBox[{"x", ",", "coeff3"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{"sosPart3S1", "<", "0"}], ",", "x"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"sosPart3S1", "\[Equal]", "0"}], ",", "x"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{"sosPart3S1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "21"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8854405147764482`*^9, 3.88544052976546*^9}, {
+  3.885444571480256*^9, 3.885444591037094*^9}},
+ CellLabel->"In[77]:=",ExpressionUUID->"034b6c1b-6e97-43f6-abe2-fc5363911af8"]
+},
+WindowSize->{3794, 2067},
+WindowMargins->{{23, Automatic}, {23, Automatic}},
+Magnification:>2. Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3097, 87, 617, "Input",ExpressionUUID->"61304181-41af-4e8e-82d2-70b90ed0fed4"],
+Cell[3658, 109, 1754, 53, 309, "Input",ExpressionUUID->"8f340970-f682-4742-b7f7-069101a78763"],
+Cell[5415, 164, 1902, 59, 309, "Input",ExpressionUUID->"981b0a8a-a667-40ed-8c25-b883dcad37a4"],
+Cell[7320, 225, 1791, 55, 309, "Input",ExpressionUUID->"98dc4735-996c-4e94-a733-dc196522eb1a"],
+Cell[9114, 282, 2223, 68, 358, "Input",ExpressionUUID->"773340f9-9959-4385-bef5-519433f8d1f0"],
+Cell[11340, 352, 2909, 84, 529, "Input",ExpressionUUID->"fa3188b5-a4af-45d5-a8ab-0713f0d166b7"],
+Cell[14252, 438, 1654, 51, 309, "Input",ExpressionUUID->"80339cb2-b424-4574-8f30-4c54b56cf61b"],
+Cell[15909, 491, 2011, 61, 397, "Input",ExpressionUUID->"51451f71-a020-48f3-9485-83fd3aa39738"],
+Cell[17923, 554, 3234, 93, 617, "Input",ExpressionUUID->"48f88cc2-9667-4938-ba13-920f49707e25"],
+Cell[21160, 649, 1466, 44, 314, "Input",ExpressionUUID->"d7b4de95-ad5e-4141-8d14-0f2e4639c040"],
+Cell[22629, 695, 1810, 55, 363, "Input",ExpressionUUID->"09a86b62-6b40-4ab9-89c3-b4af179f08e5"],
+Cell[24442, 752, 2137, 65, 314, "Input",ExpressionUUID->"47c489af-1103-471c-a706-15aaa71bdc3f"],
+Cell[26582, 819, 2509, 76, 363, "Input",ExpressionUUID->"03693801-2ff0-481d-a02f-268d47feae7b"],
+Cell[29094, 897, 2892, 87, 407, "Input",ExpressionUUID->"034b6c1b-6e97-43f6-abe2-fc5363911af8"]
+}
+]
+*)
+

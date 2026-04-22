@@ -1,0 +1,95 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2615,         87]
+NotebookOptionsPosition[      2205,         72]
+NotebookOutlinePosition[      2571,         88]
+CellTagsIndexPosition[      2528,         85]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Get", "[", "\"\<SOSRepr`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.883873552652248*^9, 3.883873557168953*^9}, {
+  3.8838736486951447`*^9, 3.883873709542315*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"05e36992-f9b1-4040-ae85-9472c13ef23b"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SOSRepr", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", "2"}], "-", 
+     RowBox[{"2", "x"}], "+", "4"}], ",", "x"}], "]"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{"SOSRepr", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"1211", " ", 
+      SuperscriptBox["x", "2"]}], "180"], "-", 
+    FractionBox[
+     RowBox[{"12863", " ", 
+      SuperscriptBox["x", "3"]}], "648"], "+", 
+    FractionBox[
+     RowBox[{"328321", " ", 
+      SuperscriptBox["x", "4"]}], "9720"], "-", 
+    FractionBox[
+     RowBox[{"356689", " ", 
+      SuperscriptBox["x", "5"]}], "9720"], "+", 
+    FractionBox[
+     RowBox[{"258937", " ", 
+      SuperscriptBox["x", "6"]}], "9720"], "-", 
+    FractionBox[
+     RowBox[{"127883", " ", 
+      SuperscriptBox["x", "7"]}], "9720"], "+", 
+    FractionBox[
+     RowBox[{"8587", " ", 
+      SuperscriptBox["x", "8"]}], "1944"], "-", 
+    FractionBox[
+     RowBox[{"9611", " ", 
+      SuperscriptBox["x", "9"]}], "9720"], "+", 
+    FractionBox[
+     RowBox[{"1369", " ", 
+      SuperscriptBox["x", "10"]}], "9720"], "-", 
+    FractionBox[
+     RowBox[{"14", " ", 
+      SuperscriptBox["x", "11"]}], "1215"], "+", 
+    FractionBox[
+     SuperscriptBox["x", "12"], "2430"]}], ",", "x"}], "]"}]}], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"5ab4fadc-1a52-4a07-b75c-b04b6adcae72"]
+},
+WindowSize->{1808, 2067},
+WindowMargins->{{Automatic, 26}, {26, Automatic}},
+Magnification:>1.4 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 284, 5, 44, "Input",ExpressionUUID->"05e36992-f9b1-4040-ae85-9472c13ef23b"],
+Cell[845, 27, 1356, 43, 107, "Input",ExpressionUUID->"5ab4fadc-1a52-4a07-b75c-b04b6adcae72"]
+}
+]
+*)
+

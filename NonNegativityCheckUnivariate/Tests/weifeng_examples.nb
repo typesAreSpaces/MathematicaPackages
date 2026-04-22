@@ -1,0 +1,710 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     21767,        709]
+NotebookOptionsPosition[     21289,        688]
+NotebookOutlinePosition[     21653,        704]
+CellTagsIndexPosition[     21610,        701]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Needs", "[", 
+    RowBox[{
+    "\"\<NonNegativityCheckUnivariate`\>\"", ",", 
+     "\"\</home/jose/Documents/GithubProjects/phd-thesis/Software/Mathematica/\
+Packages/NonNegativityCheckUnivariate/NonNegativityCheckUnivariate.wl\>\""}], 
+    "]"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Test", ":", " ", 
+    RowBox[{
+     RowBox[{"Prof", ".", " ", 
+      RowBox[{"Kapur", "'"}]}], "s", " ", "tests"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "3"}], "-", 
+      RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", "-", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Minus]", 
+       RowBox[{"x", "^", "3"}]}], "\[Minus]", 
+      RowBox[{"x", "^", "2"}], "+", "x", "+", "1"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", "-", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"4", 
+       RowBox[{"x", "^", "2"}]}], "+", 
+      RowBox[{"9", "x"}], "\[Minus]", "4"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "-", "1"}], ",", 
+       RowBox[{"x", "+", "1"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest4", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"30", 
+       RowBox[{"x", "^", "3"}]}], "\[Minus]", 
+      RowBox[{"27", 
+       RowBox[{"x", "^", "2"}]}], "\[Minus]", 
+      RowBox[{"15", "x"}], "\[Minus]", "59"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"91", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"68", "x"}]}], ",", 
+       RowBox[{
+        RowBox[{"7", 
+         RowBox[{"x", "^", "2"}]}], "\[Minus]", 
+        RowBox[{"34", "x"}], "+", "95"}], ",", 
+       RowBox[{"x", "-", "55"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest5", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"3", 
+       RowBox[{"x", "^", "2"}]}], "\[Minus]", 
+      RowBox[{"15", "x"}], "\[Minus]", "59"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"91", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"68", "x"}]}], ",", 
+       RowBox[{
+        RowBox[{"77", "x"}], "+", "95"}], ",", 
+       RowBox[{
+        RowBox[{"x", "^", "2"}], "+", "x", "+", "55"}], ",", 
+       RowBox[{
+        RowBox[{"x", "^", "2"}], "-", "x", "-", "55"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest6", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "4"}], "+", 
+      RowBox[{"10", " ", 
+       RowBox[{"x", "^", "2"}]}], "+", 
+      RowBox[{"7", " ", "x"}], "+", "12"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "-", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest7", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"30", 
+       RowBox[{"x", "^", "3"}]}], "-", 
+      RowBox[{"27", 
+       RowBox[{"x", "^", "2"}]}], "-", 
+      RowBox[{"15", "x"}], "-", "59"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"91", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"68", "x"}]}], ",", 
+       RowBox[{
+        RowBox[{"77", "x"}], "+", "95"}], ",", 
+       RowBox[{
+        RowBox[{"x", "^", "2"}], "+", "x", "+", "55"}], ",", 
+       RowBox[{
+        RowBox[{"x", "^", "2"}], "-", "x", "+", "55"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest8", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "+", 
+      RowBox[{"8", " ", "x"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"9", "x"}], "-", "14"}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"x", "^", "4"}]}], "+", 
+        RowBox[{"8.5", 
+         RowBox[{"x", "^", "3"}]}], "-", 
+        RowBox[{"27", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"38", "x"}], "-", "20"}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"2", "x"}], "+", "24"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest9", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "100"}], "+", 
+      RowBox[{"100", 
+       RowBox[{"x", "^", "3"}]}], "-", "100"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", "1"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest10", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"x", "^", "100"}]}], "+", 
+      RowBox[{"100", 
+       RowBox[{"x", "^", "3"}]}], "+", "100"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"x", "^", "2"}]}], "+", "0.5"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest11", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"x", "^", "2"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", 
+       RowBox[{"x", "^", "4"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest12", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"x", "^", "2"}]}], "+", "5"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "2"}], ")"}]}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"4", "x"}], "+", "2"}], ")"}], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "-", "2"}], ")"}], "^", "2"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest13", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"x", "^", "2"}]}], "+", "4"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x", "-", "2"}], ")"}], "^", "2"}]}], 
+       RowBox[{"(", 
+        RowBox[{"x", "+", "2"}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{"x", "+", "1"}], ")"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest14", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "6"}], "+", 
+      RowBox[{"7", 
+       RowBox[{"x", "^", "5"}]}], "-", 
+      RowBox[{"53", 
+       RowBox[{"x", "^", "4"}]}], "-", 
+      RowBox[{"171", 
+       RowBox[{"x", "^", "3"}]}], "+", 
+      RowBox[{"1296", 
+       RowBox[{"x", "^", "2"}]}], "-", 
+      RowBox[{"1728", "x"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "^", "4"}], "-", 
+        RowBox[{"6", 
+         RowBox[{"x", "^", "3"}]}], "-", 
+        RowBox[{"11", 
+         RowBox[{"x", "^", "2"}]}], "+", "24"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest15", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"x", "^", "2"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "x"}]}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest16", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "+", 
+      RowBox[{"8", "x"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "2"}], ")"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "7"}], ")"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "2.5"}], ")"}]}], 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x", "-", "2"}], ")"}], "^", "3"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"(", 
+          RowBox[{"x", "+", "4"}], ")"}]}], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", "6"}], ")"}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest17", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"x", "-", "2"}], ")"}]}], 
+      RowBox[{"(", 
+       RowBox[{"x", "+", "2"}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x", "-", "2"}], ")"}], "^", "2"}]}], 
+       RowBox[{"(", 
+        RowBox[{"x", "+", "2"}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{"x", "+", "1"}], ")"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest18", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "47"}], 
+       RowBox[{"x", "^", "19"}]}], "-", 
+      RowBox[{"39", 
+       RowBox[{"x", "^", "17"}]}], "-", 
+      RowBox[{"53", 
+       RowBox[{"x", "^", "13"}]}], "-", 
+      RowBox[{"72", 
+       RowBox[{"x", "^", "11"}]}], "-", 
+      RowBox[{"97", 
+       RowBox[{"x", "^", "10"}]}], "+", 
+      RowBox[{"33", 
+       RowBox[{"x", "^", "5"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "56"}], 
+         RowBox[{"x", "^", "10"}]}], "-", 
+        RowBox[{"62", 
+         RowBox[{"x", "^", "7"}]}], "+", 
+        RowBox[{"97", 
+         RowBox[{"x", "^", "6"}]}], "-", 
+        RowBox[{"73", 
+         RowBox[{"x", "^", "3"}]}], "-", 
+        RowBox[{"4", 
+         RowBox[{"x", "^", "2"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "82"}], 
+         RowBox[{"x", "^", "12"}]}], "+", 
+        RowBox[{"80", 
+         RowBox[{"x", "^", "11"}]}], "-", 
+        RowBox[{"44", 
+         RowBox[{"x", "^", "8"}]}], "+", 
+        RowBox[{"71", 
+         RowBox[{"x", "^", "5"}]}], "-", 
+        RowBox[{"17", 
+         RowBox[{"x", "^", "3"}]}], "-", 
+        RowBox[{"75", 
+         RowBox[{"x", "^", "2"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"72", 
+         RowBox[{"x", "^", "7"}]}], "+", 
+        RowBox[{"37", 
+         RowBox[{"x", "^", "5"}]}], "-", 
+        RowBox[{"23", 
+         RowBox[{"x", "^", "4"}]}], "+", 
+        RowBox[{"87", 
+         RowBox[{"x", "^", "3"}]}], "+", 
+        RowBox[{"44", "x"}], "+", "29"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest19", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"18", 
+       RowBox[{"x", "^", "29"}]}], "+", 
+      RowBox[{"52", 
+       RowBox[{"x", "^", "26"}]}], "+", 
+      RowBox[{"36", 
+       RowBox[{"x", "^", "15"}]}], "+", 
+      RowBox[{"91", 
+       RowBox[{"x", "^", "6"}]}], "-", 
+      RowBox[{"22", 
+       RowBox[{"x", "^", "5"}]}], "+", 
+      RowBox[{"51", 
+       RowBox[{"x", "^", "4"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"59", 
+         RowBox[{"x", "^", "27"}]}], "-", 
+        RowBox[{"69", 
+         RowBox[{"x", "^", "26"}]}], "-", 
+        RowBox[{"46", 
+         RowBox[{"x", "^", "24"}]}], "-", 
+        RowBox[{"33", 
+         RowBox[{"x", "^", "23"}]}], "+", 
+        RowBox[{"87", 
+         RowBox[{"x", "^", "11"}]}], "-", 
+        RowBox[{"34", 
+         RowBox[{"x", "^", "8"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"69", 
+         RowBox[{"x", "^", "17"}]}], "+", 
+        RowBox[{"80", 
+         RowBox[{"x", "^", "15"}]}], "+", 
+        RowBox[{"28", 
+         RowBox[{"x", "^", "12"}]}], "-", 
+        RowBox[{"42", 
+         RowBox[{"x", "^", "7"}]}], "-", 
+        RowBox[{"33", 
+         RowBox[{"x", "^", "3"}]}], "+", "21"}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"x", "^", "19"}]}], "-", 
+        RowBox[{"31", 
+         RowBox[{"x", "^", "18"}]}], "+", 
+        RowBox[{"25", 
+         RowBox[{"x", "^", "12"}]}], "+", 
+        RowBox[{"31", 
+         RowBox[{"x", "^", "7"}]}], "-", 
+        RowBox[{"27", 
+         RowBox[{"x", "^", "4"}]}], "+", "65"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest20", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "51"}], 
+       RowBox[{"x", "^", "68"}]}], "+", 
+      RowBox[{"89", 
+       RowBox[{"x", "^", "67"}]}], "+", 
+      RowBox[{"14", 
+       RowBox[{"x", "^", "37"}]}], "-", 
+      RowBox[{"79", 
+       RowBox[{"x", "^", "25"}]}], "-", 
+      RowBox[{"58", 
+       RowBox[{"x", "^", "16"}]}], "-", 
+      RowBox[{"95", 
+       RowBox[{"x", "^", "3"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"37", 
+         RowBox[{"x", "^", "88"}]}], "+", 
+        RowBox[{"5", 
+         RowBox[{"x", "^", "59"}]}], "-", 
+        RowBox[{"36", 
+         RowBox[{"x", "^", "56"}]}], "-", 
+        RowBox[{"57", 
+         RowBox[{"x", "^", "40"}]}], "+", 
+        RowBox[{"85", 
+         RowBox[{"x", "^", "29"}]}], "+", 
+        RowBox[{"80", 
+         RowBox[{"x", "^", "20"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"42", 
+         RowBox[{"x", "^", "99"}]}], "+", 
+        RowBox[{"9", 
+         RowBox[{"x", "^", "92"}]}], "-", 
+        RowBox[{"21", 
+         RowBox[{"x", "^", "71"}]}], "-", 
+        RowBox[{"27", 
+         RowBox[{"x", "^", "57"}]}], "-", 
+        RowBox[{"79", 
+         RowBox[{"x", "^", "9"}]}], "-", 
+        RowBox[{"22", 
+         RowBox[{"x", "^", "4"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"49", 
+         RowBox[{"x", "^", "86"}]}], "-", 
+        RowBox[{"58", 
+         RowBox[{"x", "^", "84"}]}], "+", 
+        RowBox[{"49", 
+         RowBox[{"x", "^", "52"}]}], "+", 
+        RowBox[{"x", "^", "45"}], "-", 
+        RowBox[{"95", 
+         RowBox[{"x", "^", "32"}]}], "+", 
+        RowBox[{"86", 
+         RowBox[{"x", "^", "8"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "12"}], 
+         RowBox[{"x", "^", "91"}]}], "+", 
+        RowBox[{"78", 
+         RowBox[{"x", "^", "63"}]}], "+", 
+        RowBox[{"5", 
+         RowBox[{"x", "^", "54"}]}], "-", 
+        RowBox[{"63", 
+         RowBox[{"x", "^", "47"}]}], "-", 
+        RowBox[{"5", 
+         RowBox[{"x", "^", "38"}]}], "+", 
+        RowBox[{"36", 
+         RowBox[{"x", "^", "24"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"kapurTest21", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"63", 
+       RowBox[{"x", "^", "136"}]}], "+", 
+      RowBox[{"21", 
+       RowBox[{"x", "^", "103"}]}], "-", 
+      RowBox[{"71", 
+       RowBox[{"x", "^", "73"}]}], "-", 
+      RowBox[{"66", 
+       RowBox[{"x", "^", "44"}]}], "-", 
+      RowBox[{"34", 
+       RowBox[{"x", "^", "40"}]}], "+", 
+      RowBox[{"72", 
+       RowBox[{"x", "^", "15"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "60"}], 
+         RowBox[{"x", "^", "169"}]}], "+", 
+        RowBox[{"7", 
+         RowBox[{"x", "^", "141"}]}], "-", 
+        RowBox[{"61", 
+         RowBox[{"x", "^", "133"}]}], "+", 
+        RowBox[{"45", 
+         RowBox[{"x", "^", "116"}]}], "-", 
+        RowBox[{"50", 
+         RowBox[{"x", "^", "84"}]}], "-", 
+        RowBox[{"22", 
+         RowBox[{"x", "^", "14"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"16", 
+         RowBox[{"x", "^", "183"}]}], "-", 
+        RowBox[{"22", 
+         RowBox[{"x", "^", "167"}]}], "+", 
+        RowBox[{"38", 
+         RowBox[{"x", "^", "150"}]}], "-", 
+        RowBox[{"48", 
+         RowBox[{"x", "^", "83"}]}], "-", 
+        RowBox[{"87", 
+         RowBox[{"x", "^", "53"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"88", 
+         RowBox[{"x", "^", "188"}]}], "+", 
+        RowBox[{"74", 
+         RowBox[{"x", "^", "164"}]}], "-", 
+        RowBox[{"39", 
+         RowBox[{"x", "^", "132"}]}], "-", 
+        RowBox[{"20", 
+         RowBox[{"x", "^", "114"}]}], "+", 
+        RowBox[{"31", 
+         RowBox[{"x", "^", "35"}]}], "-", 
+        RowBox[{"52", 
+         RowBox[{"x", "^", "11"}]}]}], ",", 
+       RowBox[{
+        RowBox[{"21", 
+         RowBox[{"x", "^", "160"}]}], "-", 
+        RowBox[{"12", 
+         RowBox[{"x", "^", "155"}]}], "-", 
+        RowBox[{"21", 
+         RowBox[{"x", "^", "123"}]}], "-", 
+        RowBox[{"72", 
+         RowBox[{"x", "^", "84"}]}], "+", 
+        RowBox[{"55", 
+         RowBox[{"x", "^", "64"}]}], "-", 
+        RowBox[{"17", 
+         RowBox[{"x", "^", "38"}]}]}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"kapurTests", "=", 
+    RowBox[{"{", 
+     RowBox[{
+     "kapurTest1", ",", "kapurTest2", ",", "kapurTest3", ",", "kapurTest4", 
+      ",", "kapurTest5", ",", "kapurTest6", ",", "kapurTest7", ",", 
+      "kapurTest8", ",", "kapurTest9", ",", "kapurTest10", ",", "kapurTest11",
+       ",", "kapurTest12", ",", "kapurTest13", ",", "kapurTest14", ",", 
+      "kapurTest15", ",", "kapurTest16", ",", "kapurTest17", ",", 
+      "kapurTest18", ",", "kapurTest19", ",", "kapurTest20", ",", 
+      "kapurTest21"}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "\"\<Using Kapur's Algorithm\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<Input polynomials:\>\"", "]"}], ";", 
+       RowBox[{"Print", "[", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], ";", 
+       RowBox[{"Print", "[", "\"\<Testing polynomial:\>\"", "]"}], ";", 
+       RowBox[{"Print", "[", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], ";", 
+       RowBox[{"Print", "[", "\"\<Output:\>\"", "]"}], ";", 
+       RowBox[{"Print", "[", 
+        RowBox[{"NonNegativityCheckUnivariate", "[", 
+         RowBox[{"x", ",", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}]}], ")"}], "&"}], 
+    ",", "kapurTests"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", "\"\<Using Mathematica CAD Algorithm\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DoubleCheckWithCAD", "[", "test_List", "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"SameQ", "[", 
+        RowBox[{"#", ",", "True"}], "]"}], ",", "True", ",", "False"}], "]"}],
+      "&"}], ",", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Reduce", "[", 
+        RowBox[{"Implies", "[", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], ",", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "]"}], "&"}], ",", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Fold", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"#1", "&&", 
+                RowBox[{"(", 
+                 RowBox[{"#2", "\[GreaterEqual]", "0"}], ")"}]}], "&"}], ",", 
+              "True", ",", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "&"}], ",", "test"}], 
+          "]"}], ",", 
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "\[GreaterEqual]", "0"}], "&"}],
+            ",", "test"}], "]"}]}], "}"}], "]"}]}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DoubleCheckWithCAD", "[", "kapurTests", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "\"\<Are they the same?\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"NonNegativityCheckUnivariate", "[", 
+      RowBox[{"x", ",", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "&"}], ",", "kapurTests"}], 
+   "]"}], "==", 
+  RowBox[{"DoubleCheckWithCAD", "[", "kapurTests", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.842989544355379*^9, 3.8429896098416348`*^9}, {
+  3.842989669725531*^9, 3.8429896699670763`*^9}, {3.842989880428769*^9, 
+  3.842989950747534*^9}, {3.8429925257584543`*^9, 3.8429925404879293`*^9}, {
+  3.8510031198547564`*^9, 3.851003121267097*^9}, {3.851004362299263*^9, 
+  3.851004399674505*^9}, {3.85100448207262*^9, 3.851004559094603*^9}, {
+  3.851004603632504*^9, 3.851004619444498*^9}, {3.8510050212164392`*^9, 
+  3.8510050228343287`*^9}, {3.8510051859357986`*^9, 3.8510051910135098`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"e232c591-b02c-4845-bf58-f14f1c695985"]
+},
+WindowSize->{855, 979},
+WindowMargins->{{Automatic, 23}, {23, Automatic}},
+Magnification:>1.7 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 20885, 673, 3892, "Input",ExpressionUUID->"e232c591-b02c-4845-bf58-f14f1c695985"]
+}
+]
+*)
+
