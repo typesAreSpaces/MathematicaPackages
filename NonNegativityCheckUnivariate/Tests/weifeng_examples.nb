@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[     21767,        709]
-NotebookOptionsPosition[     21289,        688]
-NotebookOutlinePosition[     21653,        704]
-CellTagsIndexPosition[     21610,        701]
+NotebookDataLength[     21970,        713]
+NotebookOptionsPosition[     21429,        691]
+NotebookOutlinePosition[     21856,        708]
+CellTagsIndexPosition[     21813,        705]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -15,11 +15,12 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"Needs", "[", 
-    RowBox[{
-    "\"\<NonNegativityCheckUnivariate`\>\"", ",", 
-     "\"\</home/jose/Documents/GithubProjects/phd-thesis/Software/Mathematica/\
-Packages/NonNegativityCheckUnivariate/NonNegativityCheckUnivariate.wl\>\""}], 
-    "]"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"\"\<NonNegativityCheckUnivariate`\>\"", ",", 
+     RowBox[{
+     "$HomeDirectory", "<>", 
+      "\"\</Documents/GithubProjects/MathematicaPackages/\
+NonNegativityCheckUnivariate/NonNegativityCheckUnivariate.wl\>\""}]}], "]"}], 
+   ";"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"Test", ":", " ", 
     RowBox[{
@@ -678,19 +679,22 @@ Packages/NonNegativityCheckUnivariate/NonNegativityCheckUnivariate.wl\>\""}],
    "]"}], "==", 
   RowBox[{"DoubleCheckWithCAD", "[", "kapurTests", "]"}]}]}], "Input",
  CellChangeTimes->{{3.842989544355379*^9, 3.8429896098416348`*^9}, {
-  3.842989669725531*^9, 3.8429896699670763`*^9}, {3.842989880428769*^9, 
-  3.842989950747534*^9}, {3.8429925257584543`*^9, 3.8429925404879293`*^9}, {
-  3.8510031198547564`*^9, 3.851003121267097*^9}, {3.851004362299263*^9, 
-  3.851004399674505*^9}, {3.85100448207262*^9, 3.851004559094603*^9}, {
-  3.851004603632504*^9, 3.851004619444498*^9}, {3.8510050212164392`*^9, 
-  3.8510050228343287`*^9}, {3.8510051859357986`*^9, 3.8510051910135098`*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"e232c591-b02c-4845-bf58-f14f1c695985"]
+   3.842989669725531*^9, 3.8429896699670763`*^9}, {3.842989880428769*^9, 
+   3.842989950747534*^9}, {3.8429925257584543`*^9, 3.8429925404879293`*^9}, {
+   3.8510031198547564`*^9, 3.851003121267097*^9}, {3.851004362299263*^9, 
+   3.851004399674505*^9}, {3.85100448207262*^9, 3.851004559094603*^9}, {
+   3.851004603632504*^9, 3.851004619444498*^9}, {3.8510050212164392`*^9, 
+   3.8510050228343287`*^9}, {3.8510051859357986`*^9, 
+   3.8510051910135098`*^9}, {3.9859144290909367`*^9, 3.985914470298853*^9}, {
+   3.985914588054574*^9, 3.985914593116974*^9}, 3.985914636643962*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"e232c591-b02c-4845-bf58-f14f1c695985"]
 },
 WindowSize->{855, 979},
 WindowMargins->{{Automatic, 23}, {23, Automatic}},
 Magnification:>1.7 Inherited,
-FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
-StyleDefinitions->"Default.nb"
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4551181a-7d4d-4385-8412-734d442b4e92"
 ]
 (* End of Notebook Content *)
 
@@ -703,7 +707,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[400, 13, 20885, 673, 3892, "Input",ExpressionUUID->"e232c591-b02c-4845-bf58-f14f1c695985"]
+Cell[400, 13, 21025, 676, 3237, "Input",ExpressionUUID->"e232c591-b02c-4845-bf58-f14f1c695985"]
 }
 ]
 *)
