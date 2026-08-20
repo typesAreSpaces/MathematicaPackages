@@ -23,7 +23,7 @@ Begin["`Private`"];
 
 DebuggerMessageLevel = 0;
 
-OutputDir = "/home/jose/Documents/GithubProjects/phd-thesis/Software/Output";
+OutputDir = "/Users/typesarespaces/Documents/Projects/dev/MathematicaPackages/DebuggerMessage/";
 
 DebuggerMessage[code_, debuggingLevel_Integer]:=
 If[ValueQ[Global`enableDebugging] && Global`enableDebugging <= debuggingLevel,
